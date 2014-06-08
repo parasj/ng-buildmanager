@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<!-- <link href="//cdn.jsdelivr.net/bootflat/2.0.0/css/bootflat.css" rel="stylesheet"> -->
+		<!-- <link href="//cdn.jsdelivr.net/flat-ui/2.0/css/flat-ui.css" rel="stylesheet"> -->
+		<link href="app.css" rel="stylesheet">
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>
+		<script src="app.js"></script>
+
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<!-- Navbar -->
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		  <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">Build Manager</a>
+			</div>
+		  </div>
+		</div>
+		<!-- Navbar -->
+
+		<div class="container" ng-app="buildManager">
+			<div class="content">
+				<div ng-controller="FormBuilder">
+					<div class="collapsegroup" ng-repeat="collapsegroup in fields">
+						<div id="{{collapsegroup.id + '_container'}}" class="collapsegroup_container">
+							<button type="button" class="btn collapseheader btn-xlarge" data-toggle="collapse" data-target="{{'#' + collapsegroup.id}}">{{collapsegroup.key}}</button>
+							
+							<form class="form-horizontal collapse in" role="form" id="{{collapsegroup.id}}">
+								<div class="form-group" ng-repeat="(fieldname, fieldconfig) in collapsegroup.data">
+									<!-- {{fieldconfig}} -->
+									<label class="col-sm-2 control-label">{{fieldname}}</label>
+									<div class="col-sm-10">
+
+
+										<!-- Switch for for field types -->
+										<ng-switch on="fieldconfig.type">
+											
+											<!-- Text -->
+											<div ng-switch-when="text">
+												<input ng-model="models[fieldconfig.data.id]" ng-change="fieldChangeHandler(fieldconfig.data.id)" type="text" class="form-control" placeholder="{{fieldname}}">
+											</div>
+										
+											<!-- Select -->
+											<div ng-switch-when="select">
+												<select class="form-control" ng-model="models[fieldconfig.data.id]" ng-change="fieldChangeHandler(fieldconfig.data.id)">
+													<option ng-repeat="(optionindex, option) in fieldconfig.data.options" value="{{optionindex}}">{{option}}</option>
+												</select>
+											</div>
+
+										</ng-switch>
+
+									</div>
+								</div>
+								<hr />
+							</form>
+						</div>
+					</div>
+					<button class="btn btn-primary btn-xlarge">Submit Build</button>
+				</div>
+			</div>
+		
+		<br />
+		<footer>Created by Paras Jain for Walmart Labs</footer>
+		</div>
+
+
+	</body>
+</html>
