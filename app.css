@@ -8,6 +8,7 @@ body {
 	/*margin-top: 30px;*/
 	text-transform:uppercase;
 	font-weight: bold;
+	border-radius: 1px;
 }
 
 .btn-xlarge {
