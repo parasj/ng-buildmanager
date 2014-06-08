@@ -27,4 +27,12 @@ function FormBuilder($scope) {
 			$(".collapsegroup_container#release_container").show();
 		}
 	}
+
+	$scope.submit = function() {
+		var message = "<br />";
+		for (var key in $scope.models) {
+			message += "<b>" + key + "</b>" + ": " + $scope.models[key] + "<br />";
+		}
+		bootbox.alert(message);
+	}
 }
