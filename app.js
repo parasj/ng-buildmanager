@@ -21,7 +21,7 @@ function FormBuilder($scope) {
 	});
 
 	$scope.fieldChangeHandler = function(fieldid) {
-		if (fieldid === "buildProjectType" && $scope.models[fieldid] === "jar") {
+		if (fieldid === "buildProjectType" && $scope.models[fieldid].toLowerCase().trim() === "jar") {
 			$(".collapsegroup_container#release_container").hide();
 		} else {
 			$(".collapsegroup_container#release_container").show();
