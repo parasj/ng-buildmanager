@@ -61,6 +61,7 @@
 											<!-- Select -->
 											<div ng-switch-when="select">
 												<select class="form-control" ng-model="models[fieldconfig.data.id]" ng-change="fieldChangeHandler(fieldconfig.data.id)">
+													<option value="" disabled selected>{{fieldname}}</option>
 													<option ng-repeat="(optionindex, option) in fieldconfig.data.options" value="{{optionindex}}">{{option}}</option>
 												</select>
 											</div>
@@ -74,6 +75,7 @@
 					</div>
 					<hr />
 					<button class="btn btn-primary btn-xlarge" ng-click="submit()">Submit Build</button>
+					<br />
 				</div>
 			</div>
 		

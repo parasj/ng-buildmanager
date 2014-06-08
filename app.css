@@ -24,8 +24,11 @@ body {
 	color: #FFFFFF;
 	text-decoration: none;
 	opacity: 1;
+
+	font-weight: bold;
 }
 
 .navbar {
-	/*background-color: #f1c40f;*/
+	background-color: #285e8e;
+	border-width: 0px;
 }
