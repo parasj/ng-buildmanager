@@ -110,4 +110,6 @@ function FormBuilder($scope, Data) {
 			$(".collapsegroup_container#release_container").show();
 		}
 	}
+
+	// $scope
 }
