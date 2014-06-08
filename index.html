@@ -41,7 +41,7 @@
 				<div ng-controller="FormBuilder">
 					<div class="collapsegroup" ng-repeat="collapsegroup in fields">
 						<div id="{{collapsegroup.id + '_container'}}" class="collapsegroup_container well">
-							<button type="button" class="btn collapseheader btn-xlarge btn-danger" data-toggle="collapse" data-target="{{'#' + collapsegroup.id}}">{{collapsegroup.key}}</button>
+							<button type="button" class="btn collapseheader btn-xlarge btn-primary" data-toggle="collapse" data-target="{{'#' + collapsegroup.id}}">{{collapsegroup.key}}</button>
 							
 							<form class="form-horizontal collapse in" role="form" id="{{collapsegroup.id}}">
 								<div class="form-group" ng-repeat="(fieldname, fieldconfig) in collapsegroup.data">

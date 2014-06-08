@@ -1,0 +1,90 @@
+[
+   {
+      "key":"Define",
+      "id":"define",
+      "data":{
+         "Name":{
+            "type":"text",
+            "data":{
+               "id":"defineName"
+            }
+         },
+         "Team":{
+            "type":"select",
+            "data":{
+               "id":"defineTeam",
+               "options":[
+                  "Team Alpha",
+                  "Team Beta",
+                  "Team Zeta"
+               ]
+            }
+         },
+         "Organization":{
+            "type":"select",
+            "data":{
+               "id":"defineOrganization",
+               "options":[
+                  "Walmart Labs",
+                  "Sam's Club",
+                  "Walmart.com"
+               ]
+            }
+         }
+      }
+   },
+   {
+      "key":"Build",
+      "id":"build",
+      "data":{
+         "Tool":{
+            "type":"text",
+            "data":{
+               "id":"buildTool"
+            }
+         },
+         "Project Type":{
+            "type":"text",
+            "data":{
+               "id":"buildProjectType"
+            }
+         },
+         "Version":{
+            "type":"text",
+            "data":{
+               "id":"buildVersion"
+            }
+         }
+      }
+   },
+   {
+      "key":"Deploy",
+      "id":"deploy",
+      "data":{
+         "Environment Type":{
+            "type":"text",
+            "data":{
+               "id":"deployEnvType"
+            }
+         },
+         "Environment Name":{
+            "type":"text",
+            "data":{
+               "id":"deployEnvName"
+            }
+         }
+      }
+   },
+   {
+      "key":"Release",
+      "id":"release",
+      "data":{
+         "Release Type":{
+            "type":"text",
+            "data":{
+               "id":"releaseType"
+            }
+         }
+      }
+   }
+]
